@@ -1,0 +1,29 @@
+σ_department_name='Engineering'(employees ⨝ departments)
+
+π_first_name, salary(employees)
+
+π_employee(σ_emp_id=manager_id(employees ⨝₍manager_id₎ departments))
+
+σ_salary>60000(employees)
+
+employees ⨝₍department_id=department_id₎ departments
+
+employees ⨯ projects
+
+π_employee(employees) - π_employee(σ_emp_id=manager_id(employees ⨝₍manager_id₎ departments))
+
+departments ⋈ projects
+
+π_department_name, location(departments)
+
+σ_budget>100000(projects)
+
+π_employee(σ_emp_id=manager_id(σ_department_name='Sales'(employees ⨝₍manager_id₎ departments)))
+
+π_employee(σ_department_name='Engineering'(employees)) ∪ π_employee(σ_department_name='Finance'(employees))
+
+π_employee(employees) - π_employee(projects)
+
+employees ⋈ projects
+
+σ_salary<50000 ∨ salary>70000(employees)

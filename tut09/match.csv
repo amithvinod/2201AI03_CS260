@@ -1,3 +1,4 @@
+match_id,team_1,team_2 ,match_date,season_id,venue,toss_winner,toss_decision,win_type,win_margin,outcome_type,match_winner,man_of_the_match
 419136,6,1,2010-03-29,3,Feroz Shah Kotla,6,bat,runs,40,Result,6,187
 981004,2,4,2016-05-18,9,M Chinnaswamy Stadium,4,field,runs,82,Result,2,8
 980992,2,13,2016-05-14,9,M Chinnaswamy Stadium,13,field,runs,144,Result,2,110
