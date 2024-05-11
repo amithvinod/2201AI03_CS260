@@ -3,6 +3,7 @@ DBMS_LAB_CS260_2024
 ROLL NUMBER : 2201AI03
 
 for installing and running project(with docker):
+project root folder is proj1/project1
 ## Prerequisites
 
 Before proceeding, ensure you have the following tools installed on your system:
@@ -16,8 +17,9 @@ Before proceeding, ensure you have the following tools installed on your system:
 3. Ensure that .env file is present in the root.
 4. Run the program with the following command
 
-
+'''
 	docker compose up --build
+ '''
 5. Run the application in the browser following [http://localhost:8000](http://localhost:8000)
 
 
