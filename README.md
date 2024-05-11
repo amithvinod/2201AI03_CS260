@@ -3,7 +3,9 @@ DBMS_LAB_CS260_2024
 ROLL NUMBER : 2201AI03
 
 for installing and running project(with docker):
+
 project root folder is proj1/project1
+
 ## Prerequisites
 
 Before proceeding, ensure you have the following tools installed on your system:
