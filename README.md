@@ -32,7 +32,7 @@ Make sure you have node and npm installed before hand.
 1) Clone the proj1 directory to your machine.
 2) Edit the index.mjs line 46,47 change the username and password of MySQL to your local MySQL instance.
 3) create the database locally and name it "DBMS_project"
-4) In the porj1 directory run the following commands
+4) In the root directory run the following commands
    ```
    npm install
    node index.mjs
