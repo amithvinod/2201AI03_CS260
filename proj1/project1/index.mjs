@@ -5,6 +5,8 @@ import path from "path";
 import ejsmate from "ejs-mate";
 import mysql from "mysql2";
 import bcrypt from "bcrypt";
+
+
 import bodyParser from "body-parser";
 import session from "express-session";
 import passport from "passport";
@@ -40,10 +42,14 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 // MySQL connection
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "amithv514",
-  database: "DBMS_project",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
 // Connect to MySQL
@@ -1328,12 +1334,36 @@ app.post("/formpages/9", isAuthenticated, (req, res) => {
   res.redirect("/formpages/10");
 });
 
+app.get("/formpages/10", isAuthenticated, (req, res) => {
+  const userEmail = req.session.currUser.email;
+  db.query(
+    "SELECT first_name, last_name FROM profile WHERE email = ?",
+    [userEmail],
+    (err, rows) => {
+      if (err) {
+        console.error("Error retrieving profile data:", err);
+        return res.status(500).send("Internal Server Error");
+      }
+      if (rows.length === 0) {
+        return res.status(404).send("Profile not found");
+      }
+      const { first_name, last_name } = rows[0];
+      res.render("formpages/10th.ejs", {
+        firstname: first_name,
+        lastname: last_name,
+      });
+    }
+  );
+});
+
 function isAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
   res.redirect("/login");
 }
+
+
 
 app.get("/logout", (req, res) => {
   req.logout((err) => {
