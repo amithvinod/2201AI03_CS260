@@ -2,6 +2,9 @@
 DBMS_LAB_CS260_2024
 ROLL NUMBER : 2201AI03
 
+PROJECT ROOT FOLDER : proj1/project1
+ER DIAGRAM in proj1 directory
+
 for installing and running project(with docker):
 ## Prerequisites
 
